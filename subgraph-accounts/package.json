@@ -10,7 +10,10 @@
   },
   "scripts": {
     "start": "nodemon --exec node --experimental-specifier-resolution=node --loader ts-node/esm index.ts",
-    "update": "rover subgraph publish AirLock-7wgji6@current --name accounts --schema ./schema.graphql --routing-url http://localhost:4002"
+    "update:prod": "rover subgraph publish AirLock-7wgji6@current --name accounts --schema ./schema.graphql --routing-url http://localhost:4002",
+    "update:staging": "rover subgraph publish AirLock-7wgji6@staging --name accounts --schema ./schema.graphql --routing-url https://staging-airlock-accounts.com",
+    "check:prod": "rover subgraph check AirLock-7wgji6@current --name accounts --schema ./schema.graphql",
+    "check:staging": "rover subgraph check AirLock-7wgji6@staging --name accounts --schema ./schema.graphql"
   },
   "nodemonConfig": {
     "ext": "*.ts, *.graphql"
