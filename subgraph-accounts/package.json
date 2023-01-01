@@ -1,0 +1,35 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "type": "module",
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0 <=18"
+  },
+  "scripts": {
+    "start": "nodemon --exec node --experimental-specifier-resolution=node --loader ts-node/esm index.ts",
+    "update": "rover subgraph publish AirLock-7wgji6@current --name accounts --schema ./schema.graphql --routing-url http://localhost:4002"
+  },
+  "nodemonConfig": {
+    "ext": "*.ts, *.graphql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/datasource-rest": "^4.3.2",
+    "@apollo/server": "^4.0.1",
+    "@apollo/subgraph": "^2.1.3",
+    "axios": "^1.1.3",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
